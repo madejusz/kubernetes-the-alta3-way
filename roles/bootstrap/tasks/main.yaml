@@ -16,7 +16,7 @@
   become: true
 
 - name: raw apt install python
-  raw: apt install -qy python aptitude
+  raw: apt install -qy python aptitude python3-dnspython python-dnspython
   become: true
 
 - name: Update /etc/hosts on all systems
