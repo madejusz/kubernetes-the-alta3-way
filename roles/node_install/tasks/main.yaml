@@ -85,6 +85,8 @@
     remote_src: yes
     src: "{{ item.url }}"
     dest: "{{ item.dest }}"
+    extra_opts: 
+        - --keep-directory-symlink
   loop: "{{ node_archive_dependencies }}"
   loop_control:
      label: "{{ item.name }}"
