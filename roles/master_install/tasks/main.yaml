@@ -65,6 +65,11 @@
  - name: Allow Kubernetes API Server to fully initialize
    pause:
      seconds: 90
+ - name: Blablabla
+   debug:
+     msg: "{{ lookup('dig', item) }}"
+   with_items: 
+    - "{{ nodes }}"
 
  - name: Create a route from masters to the service ip cidr
    template: 

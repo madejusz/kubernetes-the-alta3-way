@@ -1,5 +1,5 @@
-{% if ansible_distribution_release == "bionic" %}
-load_module /usr/lib/nginx/modules/ngx_stream_module.so;
+{% if ansible_distribution_release in ("bionic","buster") %}
+include /etc/nginx/modules-enabled/*.conf;
 {% endif %}
 
 user www-data;
